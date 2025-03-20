@@ -1,14 +1,18 @@
-## Object Detection Research
-Overview
-This project implements an object detection system that processes PCAP (packet capture) files and applies YOLOv11 detection algorithms on both reflectivity (recommended) and near-infrared (NIR) data streams.
+Bounding Box Generation & 3D Point Cloud Visualization
+This repository contains two key Python scripts for working with object detection in 2D and 3D:
+
+generate_bounding_boxes.py - Generates bounding boxes and saves them as coordinate files. Shows basic functionality of what YOLO model is doing.
+visualize_detection.py - Generates and processes bounding boxes and projects them onto a 3D point cloud for visualization. 
 
 
-Input:
-3d point clouds, 2d reflectivity/near-ir images. All obtained from Ouster Sensors. https://ouster.com/
-
+Input: A PCAP file containing LiDAR data.
+Processing: Using Ouster's client, we extract reflectivity (better results) or near-ir data to generate 2D bounding boxes.
 Output:
-2d bounding box coordinates obtained from YOLO v11 detection model. 3d projection of bounding box coordinates using XYZ lookup table. 
+2D bounding boxes.
+3D point cloud projections of these bounding boxes using XYZLUT for visualization. 
 
+Process Overview:
+Reflectivity images are essentially intensity maps generated from LiDAR scans, showing how much light is reflected back from objects in the environment. Using the Ouster SDK, we can extract reflectivity data from a PCAP file and convert it into a 2D image-like representation. We then apply YOLO object detection on these reflectivity images to generate 2D bounding box coordinates. With these coordinates we are able to projet these bounding box regions onto 3D point clouds. This essentially allows us to do 3D object detection using 2D images (significantly faster and less computationally expensive).
 
 
 
