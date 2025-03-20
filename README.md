@@ -13,7 +13,7 @@ This repository contains two key Python scripts for working with object detectio
 
 ## 📤 Output
 - **2D bounding boxes**.
-- **3D point cloud projections** of these bounding boxes using **XYZLUT** for visualization.
+- **3D point cloud projections** of these bounding boxes using **XYZLUT**.
 
 ## 🔄 Process Overview
 
