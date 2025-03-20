@@ -15,7 +15,6 @@ Process Overview:
 Reflectivity images are essentially intensity maps generated from LiDAR scans, showing how much light is reflected back from objects in the environment. Using the Ouster SDK, we can extract reflectivity data from a PCAP file and convert it into a 2D image-like representation. We then apply YOLO object detection on these reflectivity images to generate 2D bounding box coordinates. With these coordinates we are able to projet these bounding box regions onto 3D point clouds. This essentially allows us to do 3D object detection using 2D images (significantly faster and less computationally expensive).
 
 
+![image](https://github.com/user-attachments/assets/2f38170f-fefb-4a61-a09b-a298063facbe)
 
-![image](https://github.com/user-attachments/assets/6e199302-f4ef-4dd2-a0c5-eb4ad3204be5)
-
-This is the point cloud data with a color mask obtained from the bounding box of the 2d reflectivity images. No postprocessing applied. 
+This is an example output of a red color mask applied to the region of the bounding box in 3D space with postprocessing of outlier points. 
